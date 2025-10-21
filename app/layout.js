@@ -51,7 +51,7 @@ export default function RootLayout({ children }) {
 
               <div className="socials">
                 <p>
-                  © <a target="_blank">Praveen Sharrma</a> 2025
+                  © Praveen Sharrma 2025
                   <br />
                   Built with NextJS
                 </p>
@@ -62,6 +62,7 @@ export default function RootLayout({ children }) {
                   >
                     <i className="fa-brands fa-github"></i>
                   </Link>
+
                   <Link
                     href={"https://www.linkedin.com/in/praveenshrrma/"}
                     target="_blank"

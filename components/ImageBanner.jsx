@@ -32,14 +32,8 @@ export default function ImageBanner() {
       />
       <div className="cta-btns-container">
         <div>
-          <div>
-            <h3>Welcome to</h3>
-            <h1>The Smoljames Store</h1>
-          </div>
-          <div>
-            <button>Shop stickers</button>
-            <button>Shop planner</button>
-          </div>
+          <h3>Welcome to</h3>
+          <h1>The Smolstore</h1>
         </div>
       </div>
     </div>

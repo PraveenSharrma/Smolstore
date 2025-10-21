@@ -8,59 +8,50 @@ export default function CartPage() {
   const router = useRouter();
   const { cart, handleIncrementProduct } = useProducts();
 
-  // Challenge item - calculate the total cost of items in cart
+  // 🧮 Calculate the total cost of items in the cart
   const total = Object.keys(cart).reduce((acc, curr) => {
-    // use the reduce function to interative cumulate a value
-
-    // 1. use the price_id to find the data for the product in the cart
     const cartItem = cart[curr];
-
-    // 2. find the quantity of said product
     const quantity = cartItem.quantity;
-
-    // 3. find the cost in cents of said product
     const cost = cartItem.prices[0].unit_amount;
-
-    // 4. take the current total (acc) and add on to it the quantity of the current product multiplied by it's cost
-    const sum = acc + cost * quantity;
-
-    // 5. return the sum which then becomes the accumlated value for the next iteration
-    return sum;
+    return acc + cost * quantity;
   }, 0);
 
+  // 🧾 Create Stripe Checkout session
   async function createCheckout() {
     try {
-      const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
-      const lineItems = Object.keys(cart).map((item, itemIndex) => {
-        return {
-          price: item,
-          quantity: cart[item].quantity,
-        };
-      });
+      const lineItems = Object.keys(cart).map((item) => ({
+        price: item,
+        quantity: cart[item].quantity,
+      }));
 
-      const response = await fetch(baseURL + "/api/checkout", {
+      const response = await fetch("/api/checkout", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
         },
         body: JSON.stringify({ lineItems }),
       });
+
       const data = await response.json();
-      if (response.ok) {
-        console.log(data);
+
+      if (response.ok && data.url) {
         router.push(data.url);
+      } else {
+        console.error("Failed to create checkout session", data);
       }
     } catch (err) {
-      console.log("Error creating checkout", err.message);
+      console.error("Error creating checkout:", err.message);
     }
   }
 
   return (
     <section className="cart-section">
       <h2>Your Cart</h2>
+
       {Object.keys(cart).length === 0 && <p>You have no items in your cart!</p>}
+
       <div className="cart-container">
-        {Object.keys(cart).map((item, itemIndex) => {
+        {Object.keys(cart).map((item, index) => {
           const itemData = cart[item];
           const itemQuantity = itemData?.quantity;
 
@@ -70,10 +61,11 @@ export default function CartPage() {
               : itemData.name
                   .replaceAll(" Sticker.png", "")
                   .replaceAll(" ", "_");
+
           const imgUrl = "low_res/" + imgName + ".jpeg";
 
           return (
-            <div key={itemIndex} className="cart-item">
+            <div key={index} className="cart-item">
               <img src={imgUrl} alt={imgName + "-img"} />
               <div className="cart-item-info">
                 <h3>{itemData.name}</h3>
@@ -92,7 +84,6 @@ export default function CartPage() {
                     placeholder="2"
                     onChange={(e) => {
                       const newValue = e.target.value;
-
                       handleIncrementProduct(
                         itemData.default_price,
                         newValue,
@@ -107,6 +98,7 @@ export default function CartPage() {
           );
         })}
       </div>
+
       <div className="checkout-container">
         <Link href={"/"}>
           <button>&larr; Continue shopping</button>

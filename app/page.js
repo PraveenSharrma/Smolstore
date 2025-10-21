@@ -8,6 +8,7 @@ export async function getProducts() {
     const products = await response.json();
     return products;
   } catch (err) {
+    console.log(err.stack);
     console.log(err.message);
     return [];
   }
