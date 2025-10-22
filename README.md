@@ -1,6 +1,8 @@
 # Smolstore – E-Commerce Store (Next.js, Stripe & FantaCSS)
 
-[Live Demo](https://smolstore.vercel.app/)
+<a href="https://smolstore.vercel.app" target="_blank">
+  <img src="https://img.shields.io/badge/Live%20Demo-Visit-blue?style=for-the-badge&logo=vercel" alt="Live Demo">
+</a>
 
 Smolstore is a fully functional full-stack online store built with **Next.js**, **Stripe**, and **FantaCSS**. It demonstrates modern web development skills with a complete product catalog, shopping cart, and secure Stripe payments.
 
