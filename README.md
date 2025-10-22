@@ -34,3 +34,7 @@ cd smolstore
 npm install
 echo "NEXT_PUBLIC_STRIPE_PUBLIC_KEY=your_stripe_public_key" > .env.local
 npm run dev
+
+
+![Smolstore Home](https://raw.githubusercontent.com/PraveenSharrma/Smolstore/main/screenshots/smolstore.png)
+![Smolstore Product](https://raw.githubusercontent.com/PraveenSharrma/Smolstore/main/screenshots/smolstore2.png)
