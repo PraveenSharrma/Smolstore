@@ -24,6 +24,9 @@ Smolstore is a fully functional full-stack online store built with **Next.js**, 
 - Responsive design optimized for desktop and mobile  
 - Lightning-fast performance thanks to Next.js optimizations  
 
+![Smolstore Home](https://raw.githubusercontent.com/PraveenSharrma/Smolstore/main/screenshots/smolstore.png)  
+![Smolstore Product](https://raw.githubusercontent.com/PraveenSharrma/Smolstore/main/screenshots/smolstore2.png)
+
 ---
 
 ## 🚀 Getting Started
@@ -36,5 +39,5 @@ echo "NEXT_PUBLIC_STRIPE_PUBLIC_KEY=your_stripe_public_key" > .env.local
 npm run dev
 
 
-![Smolstore Home](https://raw.githubusercontent.com/PraveenSharrma/Smolstore/main/screenshots/smolstore.png)
-![Smolstore Product](https://raw.githubusercontent.com/PraveenSharrma/Smolstore/main/screenshots/smolstore2.png)
+
+
