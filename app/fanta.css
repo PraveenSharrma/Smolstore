@@ -651,3 +651,21 @@ details[open] summary {
     max-width: 600px;
   }
 }
+
+/* -------- FINAL FIX: Home & Cart links -------- */
+.links-container a {
+  color: white !important;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.links-container a:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1);
+}
