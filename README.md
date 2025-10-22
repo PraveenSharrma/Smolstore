@@ -37,7 +37,3 @@ cd smolstore
 npm install
 echo "NEXT_PUBLIC_STRIPE_PUBLIC_KEY=your_stripe_public_key" > .env.local
 npm run dev
-
-
-
-
