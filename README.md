@@ -8,7 +8,7 @@ Smolstore is a fully functional full-stack online store built with **Next.js**, 
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** Next.js, React, FantaCSS  
+- Next.js, React 
 - **Payments:** Stripe.js  
 - **Deployment:** Vercel  
 
