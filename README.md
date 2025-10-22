@@ -1,4 +1,4 @@
-# Smolstore – E-Commerce Store (Next.js, Stripe & FantaCSS)
+# Smolstore – E-Commerce Store (Next.js & Stripe)
 
 <a href="https://smolstore.vercel.app" target="_blank">
   <img src="https://img.shields.io/badge/Live%20Demo-Visit-brightgreen?style=for-the-badge&logo=vercel" alt="Live Demo">
