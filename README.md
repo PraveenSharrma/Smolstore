@@ -29,11 +29,4 @@ Smolstore is a fully functional full-stack online store built with **Next.js** &
 
 ---
 
-## 🚀 Getting Started
 
-```bash
-git clone https://github.com/yourusername/smolstore.git
-cd smolstore
-npm install
-echo "NEXT_PUBLIC_STRIPE_PUBLIC_KEY=your_stripe_public_key" > .env.local
-npm run dev
